@@ -229,15 +229,15 @@
 	    // Creates a timeout in case GA event fails to fire
 	    var backupTimer = setTimeout(function() {
 	    	console.log("Failed sending GA event: " + gaTrackingEvent + ", " + gaTrackingValue);
-	        location.reload();
+	        // location.reload();
 	    }, 1000);
 
-	    // Attempt to send the event
-	    ga('send', 'event', "medranovets.com", gaTrackingEvent, gaTrackingValue, {
-	        hitCallback: function() {
-	            clearTimeout(backupTimer);
-	            console.log("Sent the GA event successfully");
-	        }
+    	gtag('event', 'medranovets.com', {
+    		"link-clicked": gaTrackingValue,
+    	 	'event_callback': function() {
+    	 		clearTimeout(backupTimer);
+         		console.log("Sent the GA event successfully");
+    		}
     	});
 	}
 
