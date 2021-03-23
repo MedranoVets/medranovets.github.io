@@ -235,8 +235,16 @@
 	        // location.reload();
 	    }, 1000);
 
-    	gtag('event', 'medranovets.com', {
-    		"link-clicked": gaTrackingValue,
+    	// gtag('event', 'medranovets.com', {
+    	// 	"link-clicked": gaTrackingValue,
+    	//  	'event_callback': function() {
+    	//  		clearTimeout(backupTimer);
+     //     		console.log("Sent the GA event successfully");
+    	// 	}
+    	// });
+
+    	gtag('event', 'link_clicked', {
+    		"event_label" : gaTrackingValue,
     	 	'event_callback': function() {
     	 		clearTimeout(backupTimer);
          		console.log("Sent the GA event successfully");
