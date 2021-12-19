@@ -35,9 +35,21 @@
 
 		  gtag('config', 'G-M74N3HT0ZR');
 		</script>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-T6BJ9VW');</script>
+		<!-- End Google Tag Manager -->
 
 	</head>
 	<body>
+		
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6BJ9VW"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
 
 		<!-- Nav -->
 			<nav id="nav">
@@ -208,48 +220,3 @@
 	</body>
 </html>
 
-<script>
-
-	$('a').click(function(event) {
-		var linkDestination = this.getAttribute("href");
-		// console.log("clicked link: " + linkDestination);
-		sendGoogleAnalyticsEvent("link_clicked", linkDestination);
-		return true;
-	});
-
-	function sendGoogleAnalyticsEvent(gaTrackingEvent, gaTrackingValue) {
-
-	    console.log("GA event: " + gaTrackingEvent + ", " + gaTrackingValue);
-
-	    if(gaTrackingEvent == "" && gaTrackingValue == "") {
-	        console.log("No Google event to track");
-	        location.reload();
-	        return;
-	    }
-
-	    console.log("Sending the GA event...");
-
-	    // Creates a timeout in case GA event fails to fire
-	    var backupTimer = setTimeout(function() {
-	    	console.log("Failed sending GA event: " + gaTrackingEvent + ", " + gaTrackingValue);
-	        // location.reload();
-	    }, 1000);
-
-    	// gtag('event', 'medranovets.com', {
-    	// 	"link-clicked": gaTrackingValue,
-    	//  	'event_callback': function() {
-    	//  		clearTimeout(backupTimer);
-     //     		console.log("Sent the GA event successfully");
-    	// 	}
-    	// });
-
-    	gtag('event', 'link_clicked', {
-    		"event_label" : gaTrackingValue,
-    	 	'event_callback': function() {
-    	 		clearTimeout(backupTimer);
-         		console.log("Sent the GA event successfully");
-    		}
-    	});
-	}
-
-</script>
