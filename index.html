@@ -54,12 +54,12 @@
 		<!-- Nav -->
 			<nav id="nav">
 				<ul class="container">
-					<li><a href="#how_it_works">   How it Works   </a></li>
-					<li><a href="#dr_medrano">   Meet Dr. Medrano   </a></li>
-					<li><a href="#services">   Services   </a></li>
-					<li><a href="#contact">   Contact   </a></li>
-					<li><a href='https://www.yelp.com/biz/medranovets-san-francisco' target="_blank">   Yelp   </a><li>
-					<li><a href='https://medranovets.vetsfirstchoice.com/' target="_blank">   Shop   </a><li>
+					<li><a href="#how_it_works" class="tracked" data-event="Header_HowItWorks">   How it Works   </a></li>
+					<li><a href="#dr_medrano" class="tracked" data-event="Header_MeetDrM">   Meet Dr. Medrano   </a></li>
+					<li><a href="#services" class="tracked" data-event="Header_Services">   Services   </a></li>
+					<li><a href="#contact" class="tracked" data-event="Header_Contact">   Contact   </a></li>
+					<li><a href='https://www.yelp.com/biz/medranovets-san-francisco' target="_blank" class="tracked" data-event="Header_Yelp">   Yelp   </a><li>
+					<li><a href='https://medranovets.vetsfirstchoice.com/' target="_blank" class="tracked" data-event="Header_Shop">   Shop   </a><li>
 			
 				</ul>
 			</nav>
@@ -76,8 +76,8 @@
 								<h1><strong>Medrano Veterinary Inc.</strong></h1>
 							</header>
 							<p style='font-size: 1.75em'>Vet care without lifting a paw!</p>
-							<a href="#contact" class="button scrolly" style='margin-right: 10px'>Email Us</a>
-							<a href="#contact" class="button green scrolly">Text/Call Us</a>
+							<a href="#contact" class="button scrolly tracked" data-event="Hero_Email" style='margin-right: 10px'>Email Us</a>
+							<a href="#contact" class="button green scrolly tracked" data-event="Hero_Call">Text/Call Us</a>
 
 						</div>
 					</div>
@@ -134,17 +134,17 @@
 						<div class="row">
 							<div class="4u">
 								<article class='box style2'>
-									<a href="#" class="image featured"><img src="images/medrano4.jpg" alt="" /></a>
+									<a href="#" class="image featured tracked" data-event="MeetDrM_Pic1"><img src="images/medrano4.jpg" alt="" /></a>
 								</article>
 							</div>
 							<div class="4u">
 								<article class="box style2">
-									<a href="#" class="image featured"><img src="images/medrano.jpg" alt="" /></a>
+									<a href="#" class="image featured tracked" data-event="MeetDrM_Pic2"><img src="images/medrano.jpg" alt="" /></a>
 								</article>
 							</div>
 							<div class="4u">
 								<article class="box style2">
-									<a href="#" class="image featured"><img src="images/MarciaM.jpg" alt="" /></a>
+									<a href="#" class="image featured tracked" data-event="MeetDrM_Pic3"><img src="images/MarciaM.jpg" alt="" /></a>
 								</article>
 							</div>
 						</div>
@@ -210,8 +210,8 @@
 						<div class="row">
 							<div class="12u" style='text-align: center'>
 								<p>Servicing San Francisco<p>
-								<a href=tel:4155068387 style='text-decoration: none;'><p style='color: #43B3E0; font-weight: bold'>415.506.VETS</p></a>
-								<a href=mailto:contact@medvetsf.com style='text-decoration: none;'><p style='color: #84b123; font-weight: bold'>contact@medvetsf.com</p></a>
+								<a href=tel:4155068387 style='text-decoration: none;' class="tracked"  data-event="Footer_Call"><p style='color: #43B3E0; font-weight: bold'>415.506.VETS</p></a>
+								<a href=mailto:contact@medvetsf.com style='text-decoration: none;' class="tracked" data-event="Footer_Email"><p style='color: #84b123; font-weight: bold'>contact@medvetsf.com</p></a>
 							</div>
 						</div>
 				</article>
@@ -220,3 +220,17 @@
 	</body>
 </html>
 
+<script>
+
+$(".tracked").click(function(event) {
+    var clickedEvent = this.getAttribute("data-event");
+    // var pageTitle = document.body.getAttribute("data-page-title");
+    var eventName = 'c_' + clickedEvent;
+    console.log(eventName);
+
+    gtag('event', eventName, {
+        'pageTitle': 'home'
+    });
+});
+
+</script>
