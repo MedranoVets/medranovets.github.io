@@ -75,7 +75,7 @@
 							<header>
 								<h1><strong>Medrano Veterinary Inc.</strong></h1>
 							</header>
-							<p style='font-size: 1.75em'>Vet care without lifting a paw!</p>
+							<p style='font-size: 1.3em; line-height: 140%'>MedranoVets is your neighborhood house call veterinarian for San Francisco. We provide a stress-free experience for your pet in their most comfortable environment: their home.</p>
 							<a href="#contact" class="button scrolly tracked" data-event="Hero_Email" style='margin-right: 10px'>Email Us</a>
 							<a href="#contact" class="button green scrolly tracked" data-event="Hero_Call">Text/Call Us</a>
 
@@ -217,12 +217,16 @@
 				</article>
 			</div>
 
+			<div class="wrapper style4" style='padding: 2em'>
+				<span id="copyright">&copy; Medrano Veterinary, Inc. All rights reserved. | Design: HTML5 UP</span>
+			</div>
+
 	</body>
 </html>
 
 <script>
 
-document.getElementById("years_experience").innerHTML = 2023 - 2008;
+document.getElementById("years_experience").innerHTML = new Date().getFullYear() - 2008;
 
 $(".tracked").click(function(event) {
     var clickedEvent = this.getAttribute("data-event");
