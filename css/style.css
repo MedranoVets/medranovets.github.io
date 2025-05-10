@@ -559,6 +559,10 @@
 			text-align: left;
 			list-style-type: circle;
 			margin-left: 80px;
+			/* margin-bottom: 1em; */
+		}
+		ul.left.check:last-child {
+			margin-bottom: 0;
 		}
 
 			ul.left.check li {
@@ -643,6 +647,13 @@
 			.wrapper.style2 header {
 				color: white;
 				text-shadow: 1px 1px 0px #368FB3;
+				text-align: left;
+				max-width: 60%;
+				margin: auto;
+			}
+			.wrapper.style2 p {
+				margin-bottom: 1em;
+				text-shadow: none;
 			}
 
 			.box.style2 p {
